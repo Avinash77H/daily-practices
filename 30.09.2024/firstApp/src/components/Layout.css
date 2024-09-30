@@ -1,0 +1,7 @@
+.layout{
+  padding: 20px 20px;
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
