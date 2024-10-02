@@ -4,11 +4,13 @@ import Home from './Home'
 import About from './About'
 import Shop from './Shop'
 import Error from './Error'
+import Navbar from '../Components/Navbar'
 
 function Layout() {
   return (
     <div>
       <BrowserRouter>
+          <Navbar/>
         <Routes>
           <Route>
             <Route path="/" element={<Home/>}></Route>
