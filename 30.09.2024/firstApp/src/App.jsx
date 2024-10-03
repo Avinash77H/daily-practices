@@ -12,7 +12,6 @@ function App() {
     <>
       <Layout source={obj}>
       </Layout>
-
     </>
   );
 }
