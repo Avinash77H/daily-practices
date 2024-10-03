@@ -2,7 +2,7 @@ import React from 'react'
 import Home from './Home'
 import About from './About'
 import Shop from './Shop'
-import {BrowserRouter,Routes,Router, Route} from 'react-router-dom'
+import {BrowserRouter,Routes, Route} from 'react-router-dom'
 
 function Layout() {
   return (
