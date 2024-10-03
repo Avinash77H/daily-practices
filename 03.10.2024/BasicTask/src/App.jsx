@@ -11,6 +11,8 @@ import ListRendering from './Components/ListRendering'
 import Card from './Components/Card'
 import ObjectState from './Components/ObjectState'
 import ArrayState from './Components/ArrayState'
+import Counter from './Components/Counter'
+import FullForm from './Components/FullForm'
 
 
 function App() {
@@ -48,8 +50,9 @@ function App() {
       {/* <Form/> */}
       {/* <ListRendering car={car}/> */}
       {/* <ObjectState /> */}
-      <ArrayState/>
-      
+      {/* <ArrayState/> */}
+      {/* <Counter/> */}
+      <FullForm/>
     </>
   )
 }
