@@ -13,6 +13,7 @@ import ObjectState from './Components/ObjectState'
 import ArrayState from './Components/ArrayState'
 import Counter from './Components/Counter'
 import FullForm from './Components/FullForm'
+import Timer from './Components/Timer'
 
 
 function App() {
@@ -52,7 +53,8 @@ function App() {
       {/* <ObjectState /> */}
       {/* <ArrayState/> */}
       {/* <Counter/> */}
-      <FullForm/>
+      {/* <FullForm/> */}
+      <Timer/>
     </>
   )
 }
