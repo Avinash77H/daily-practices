@@ -16,6 +16,8 @@ import FullForm from "./Components/FullForm";
 import Timer from "./Components/Timer";
 
 
+
+
 function App() {
   const data = [
     {
@@ -57,6 +59,7 @@ function App() {
       {/* <Counter/> */}
       {/* <FullForm/> */}
       <Timer/>
+      
 
    
 

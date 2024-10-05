@@ -1,9 +1,0 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base{
-    h1{
-        @apply text-center font-bold text-3xl bg-purple-500 text-white
-    }
-}

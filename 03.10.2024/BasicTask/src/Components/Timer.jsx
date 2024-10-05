@@ -1,29 +1,37 @@
 import React, { useEffect, useState } from "react";
 
 function Timer() {
+  const [isRunning,setIsRunning] = useState(false)
   const [second, setSecond] = useState(0);
   const [minute, setMinute] = useState(0);
 
-  let timer;
+  
   useEffect(() => {
-    timer = setInterval(() => {
-    
-      setSecond(second + 1);
-      console.log('interval run')
-      if (second === 59) {
-        setMinute(minute => minute + 1);
-        setSecond(0);
-      }
-    }, 1000);
+    let timer = null;
+    if(isRunning){
+
+      timer = setInterval(() => {
+      
+        setSecond(second + 1);
+        
+        if (second === 59) {
+          setMinute(minute => minute + 1);
+          setSecond(0);
+        }
+      }, 1000);
+    }
+    else if(!isRunning && second !== 0){
+      clearInterval(timer)
+    }
 
     return () => {
       clearInterval(timer);
-      console.log("clear");
     };
   });
 
   function Stop() {
-    clearInterval(timer);
+    
+    setIsRunning(false)
   }
 
   function Restart() {
@@ -31,6 +39,9 @@ function Timer() {
     setMinute(0);
   }
 
+  function Start(){
+    setIsRunning(true)
+  }
   return (
     <div className="w-screen h-screen flex justify-center items-center ">
       <div className="border-2 border-black bg-green-100 p-8 flex flex-col items-center gap-4">
@@ -41,7 +52,7 @@ function Timer() {
           </p>
         </div>
         <div className="flex gap-4">
-          <button className="bg-green-500 px-2 py-1 rounded-xl text-white">
+          <button onClick={Start} className="bg-green-500 px-2 py-1 rounded-xl text-white">
             Start
           </button>
           <button
