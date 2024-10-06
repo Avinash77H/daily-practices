@@ -4,8 +4,9 @@ import Delhi from '../src/assets/Delhi.jfif'
 import Goa from '../src/assets/Goa.jfif'
 import Jaipur from '../src/assets/jaipur.jfif'
 import Mumbai from '../src/assets/mumbai.jfif'
-
-import Tours from './components/Tours'
+import Header from './components/Header'
+import Tour from './components/Tour'
+import Card from './components/Card'
 
 const data = [
   {
@@ -45,34 +46,16 @@ const data = [
   }
 ];
 
-
-
-
-
 function App() {
-  const[tour,setTour] = useState(data)
-
-  
-  function removeTour(id){
-    const newTours = tour.filter((item)=> item.id !== id);
-    setTour(newTours)
-  }
-
-  if(tour.length === 0){
-    return (
-      <div className='refresh'>
-        <h2>No Tours Left</h2>
-        <button className='refresh-btn' onClick={()=>setTour(data)}>Refresh</button>
-      </div>
-    )
-  }
+  // const[data,setData] = useState(data)
 
   return (
-    <div className='app'>
+    <>
 
-      <Tours tour={tour} removeTour={removeTour}/>
-    </div>
-  
+      {/* <Header/> */}
+      <Tour data={data}/>
+
+    </>
   )
 }
 

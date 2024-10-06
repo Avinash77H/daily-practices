@@ -4,7 +4,7 @@ import Goa from '../src/assets/Goa.jfif'
 import Jaipur from '../src/assets/jaipur.jfif'
 import Mumbai from '../src/assets/mumbai.jfif'
 
-export const data = [
+  const data = [
   {
     id:1,
     name:"Agra",
