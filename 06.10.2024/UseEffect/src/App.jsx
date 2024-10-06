@@ -2,7 +2,7 @@ import { useState,useEffect } from "react";
 import "./App.css";
 import Header from "./Components/Header";
 import Filter from "./Components/Filter";
-import Cards from "./Cards";
+import Cards from "./Components/Cards";
 import Spinner from "./Components/Spinner";
 import {toast} from 'react-toastify';
 
