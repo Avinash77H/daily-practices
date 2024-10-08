@@ -7,31 +7,31 @@ import Spinner from "./Components/Spinner";
 import {toast} from 'react-toastify';
 
 // const api = "https://api.escuelajs.co/api/v1/categories";
-   const api = "https://dummyjson.com/products"
+   const api = 'https://dummyjson.com/products'
 
 
-const filterData = [
-  {
-    id: 1,
-    title: "nuevo",
-  },
-  {
-    id: 2,
-    title: "Electronics",
-  },
-  {
-    id: 3,
-    title: "Furniture",
-  },
-  {
-    id: 4,
-    title: "Shoes",
-  },
-  {
-    id: 5,
-    title: "Testing Category",
-  },
-];
+// const filterData = [
+//   {
+//     id: 1,
+//     title: "nuevo",
+//   },
+//   {
+//     id: 2,
+//     title: "Electronics",
+//   },
+//   {
+//     id: 3,
+//     title: "Furniture",
+//   },
+//   {
+//     id: 4,
+//     title: "Shoes",
+//   },
+//   {
+//     id: 5,
+//     title: "Testing Category",
+//   },
+// ];
 
 function App() {
 
@@ -44,7 +44,7 @@ function App() {
       let response = await fetch(api);
       let output = await response.json();
       console.log(output)
-      setData(output)
+      setData(output.products)
     } catch (error) {
       toast.error('Something went Wrong')
     }
@@ -61,10 +61,10 @@ function App() {
         <Header />
       </div>
       <div>
-        {/* <Filter filterData={filterData}/> */}
+        <Filter filterData={filterData}/>
       </div>
       <div>
-        {/* {loading ? <Spinner/> : <Cards data={data}/>} */}
+        {loading ? <Spinner/> : <Cards data={data}/>}
       </div>
     </div>
   );
