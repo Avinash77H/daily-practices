@@ -10,13 +10,13 @@ function Form3() {
     password: "",
   };
 
-  const onSubmit = (values) => {
+  const onSubmit= (values) => {
     console.log(values);
   };
 
   let userSchema = Yup.object({
     fullName: Yup.string()
-      .min(5, "minimum 5 character required")
+      .min(5, "minimum  5 character required")
       .required("*Required"),
     email: Yup.string().email("invalid email").required("*Required"),
     password: Yup.string().required("*Required"),
