@@ -63,9 +63,9 @@ function DemoForm2() {
     validate
   })
   return (
-    <div className='bg-green-200 size-full flex justify-center items-center'>
-      <div className='border border-black w-1/3 flex justify-start items-center'>
-        <form onSubmit={handleSubmit} className='border border-red-500 w-full flex flex-col gap-1 p-4'>
+    <div className='size-full flex justify-center items-center '>
+      <div className='w-[450px]  '>
+        <form onSubmit={handleSubmit} className='border border-red-500 w-full flex flex-col gap-1 p-8 px-20 bg-green-200 '>
           <h1 className='text-center text-3xl'>Registration Form</h1>
 
           <div className=' flex justify-between'>
