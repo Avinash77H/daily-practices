@@ -46,7 +46,7 @@ function Form() {
         }} className='flex flex-col gap-4 '>
             <div>
                 <label htmlFor="fullName">fullName</label><br />
-                <input onChange={formik.handleChange} type="text" id='fullName' name='fullName' className="pl-2 outline-none"/>
+                <input onChange={formik.handleChange}  type="text" id='fullName' name='fullName' className="pl-2 outline-none"/>
                 {formik.errors.fullName?<p>{formik.errors.fullName}</p>:null}
             </div>
 
