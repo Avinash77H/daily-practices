@@ -21,7 +21,7 @@ function Demo() {
     name:Yup.string().min(2,"atlease 2 character Require").required("Require"),
     email:Yup.string().email("Email is invalid").required("Required"),
     school:Yup.string().min(2,"atlease 5 character Require").required("Require"),
-    phone:Yup.number().required("Required"),
+    phone:Yup.number().min(10,"minimum 10 number required").required("Required"),
     gender:Yup.string().required("Gender is Required"),
     courses:Yup.array().min(1,'Please select atleast 1 course'),
     location:Yup.string().required('Please select atleast 1 location')
