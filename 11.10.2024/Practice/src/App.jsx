@@ -1,12 +1,14 @@
 import React from 'react'
 import Demo from './components/Demo'
+import DemoForm2 from './components/DemoForm2'
 
 function App() {
   return (
-    <div className='w-screen h-screen flex justify-center items-center'>
-      <div className='border-2 border-black p-4 bg-green-300'>
-      <Demo/>
-      </div>
+    <div className='w-screen  flex justify-center items-center'>
+      
+      {/* <Demo/> */}
+      <DemoForm2/>
+      
     </div>
   )
 }
