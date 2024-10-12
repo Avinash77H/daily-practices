@@ -48,7 +48,7 @@ function DemoForm2() {
     if(!values.sex){
       errors.sex = "Required."
     }
-    if(!values.language){
+    if(!values.language.length){
       errors.language = "Required."
     }
     if(!values.about){
@@ -72,25 +72,25 @@ function DemoForm2() {
             <label htmlFor="userId">User id:</label>
             <input onChange={handleChange} className='border border-black' type="text" name='userId' />
           </div>
-            {(errors.userId && touched.userId) ?<p className='text-red-500'>{errors.userId}</p>:null}
+            {errors.userId  ?<p className='text-red-500'>{errors.userId}</p>:null}
 
           <div className=' flex justify-between'>
             <label htmlFor="password">Password:</label>
             <input onChange={handleChange} className='border border-black' type="password" name='password' />
           </div>
-          {(errors.password && touched.password) ?<p className='text-red-500'>{errors.password}</p>:null}
+          {errors.password ?<p className='text-red-500'>{errors.password}</p>:null}
 
           <div className=' flex justify-between'>
             <label htmlFor="name">Name:</label>
             <input onChange={handleChange} className='border border-black' type="text" name='name'/>
           </div>
-          {(errors.name && touched.name) ?<p className='text-red-500'>{errors.name}</p>:null}
+          {errors.name  ?<p className='text-red-500'>{errors.name}</p>:null}
 
           <div className=' flex justify-between'>
             <label htmlFor="addresh">Addresh:</label>
             <input onChange={handleChange} className='border border-black' type="text" name='addresh'/>
           </div>
-          {(errors.addresh && touched.addresh) ?<p className='text-red-500'>{errors.addresh}</p>:null}
+          {errors.addresh  ?<p className='text-red-500'>{errors.addresh}</p>:null}
 
           <div className=' flex justify-between'>
             <label htmlFor="country">Country:</label>
@@ -102,19 +102,19 @@ function DemoForm2() {
               <option value="Russia">Russia</option>
             </select>
           </div>
-          {(errors.country && touched.country) ?<p className='text-red-500'>{errors.country}</p>:null}
+          {errors.country  ?<p className='text-red-500'>{errors.country}</p>:null}
 
           <div onChange={handleChange} className=' flex justify-between'>
             <label htmlFor="zipcode">ZIP Code:</label>
             <input className='border border-black' type="number" name='zipcode' />
           </div>
-          {(errors.zipcode && touched.zipcode) ?<p className='text-red-500'>{errors.zipcode}</p>:null}
+          {errors.zipcode  ?<p className='text-red-500'>{errors.zipcode}</p>:null}
 
           <div onChange={handleChange} className=' flex justify-between'>
             <label htmlFor="email">Email:</label>
             <input className='border border-black' type="email" name='email' />
           </div>
-          {(errors.email && touched.email) ?<p className='text-red-500'>{errors.email}</p>:null}
+          {errors.email ?<p className='text-red-500'>{errors.email}</p>:null}
 
           <div onChange={handleChange} className='flex justify-between '>
             <label htmlFor="sex">Sex:</label>
@@ -129,7 +129,7 @@ function DemoForm2() {
               </div>
             </div>
           </div>
-          {(errors.sex && touched.sex) ?<p className='text-red-500'>{errors.sex}</p>:null}
+          {errors.sex ?<p className='text-red-500'>{errors.sex}</p>:null}
 
           <div onChange={handleChange} className=' flex justify-between'>
             <label htmlFor="language">Language:</label>
@@ -144,13 +144,13 @@ function DemoForm2() {
             </div>
            </div>
           </div>
-          {(errors.language && touched.language) ?<p className='text-red-500'>{errors.language}</p>:null}
+          {errors.language  ?<p className='text-red-500'>{errors.language}</p>:null}
 
           <div className=' flex justify-between'>
             <label htmlFor="about">About:</label>
             <textarea onChange={handleChange} name="about" rows={4} cols={23} className='border border-black'></textarea>
           </div>
-          {(errors.about && touched.about) ?<p className='text-red-500'>{errors.about}</p>:null}
+          {errors.about  ?<p className='text-red-500'>{errors.about}</p>:null}
 
           <button type='submit' className='place-self-start bg-purple-400 text-white border border-black px-2 py-1 '>Submit</button>
 
