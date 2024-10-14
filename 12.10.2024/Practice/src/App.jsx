@@ -4,8 +4,8 @@ import Form2 from './components/Form2'
 function App() {
   return (
     <div>
-      {/* <Foram/> */}
-      <Form2/>
+      <Foram/>
+      {/* <Form2/> */}
     </div>
   )
 }

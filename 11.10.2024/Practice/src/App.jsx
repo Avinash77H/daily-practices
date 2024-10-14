@@ -9,8 +9,8 @@ function App() {
     <div className='w-screen  flex justify-center items-center'>
       
       {/* <Demo/> */}
-      {/* <DemoForm2/> */}
-      <DemoForm2Yup/>
+      <DemoForm2/>
+      {/* <DemoForm2Yup/> */}
       
     </div>
   )

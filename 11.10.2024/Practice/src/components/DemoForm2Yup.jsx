@@ -25,9 +25,8 @@ function DemoForm2Yup() {
     zipcode: Yup.string().required("required"),
     email: Yup.string().required("required"),
     sex: Yup.string().required("required"),
-    language: Yup.array().required("required"),
+    language: Yup.array().min(1,"At least one language is required").required("required"),
     about: Yup.string().required("required"),
-
   })
 
   const onSubmit = (values) => {
@@ -119,35 +118,36 @@ function DemoForm2Yup() {
             <p className="text-red-500">{errors.country}</p>
           ) : null}
 
-          <div onChange={handleChange} className=" flex justify-between">
+          <div  className=" flex justify-between">
             <label htmlFor="zipcode">ZIP Code:</label>
             <input
               className="border border-black"
               type="number"
               name="zipcode"
+              onChange={handleChange}
             />
           </div>
           {errors.zipcode && touched.zipcode ? (
             <p className="text-red-500">{errors.zipcode}</p>
           ) : null}
 
-          <div onChange={handleChange} className=" flex justify-between">
+          <div  className=" flex justify-between">
             <label htmlFor="email">Email:</label>
-            <input className="border border-black" type="email" name="email" />
+            <input className="border border-black" type="email" name="email" onChange={handleChange}/>
           </div>
           {errors.email && touched.email ? (
             <p className="text-red-500">{errors.email}</p>
           ) : null}
 
-          <div onChange={handleChange} className="flex justify-between ">
+          <div  className="flex justify-between ">
             <label htmlFor="sex">Sex:</label>
             <div className="flex gap-20 ">
               <div>
-                <input type="radio" name="sex" value="male" />
+                <input type="radio" name="sex" value="male" onChange={handleChange} />
                 <label htmlFor="male">Male</label>
               </div>
               <div>
-                <input type="radio" name="sex" value="female" />
+                <input type="radio" name="sex" value="female" onChange={handleChange}/>
                 <label htmlFor="female">Female</label>
               </div>
             </div>
@@ -156,15 +156,15 @@ function DemoForm2Yup() {
             <p className="text-red-500">{errors.sex}</p>
           ) : null}
 
-          <div onChange={handleChange} className=" flex justify-between">
+          <div  className=" flex justify-between">
             <label htmlFor="language">Language:</label>
             <div className="flex gap-8 ">
               <div>
-                <input type="checkbox" name="language" value="english" />
+                <input type="checkbox" name="language" value="english" onChange={handleChange}/>
                 <label htmlFor="language">English</label>
               </div>
               <div>
-                <input type="checkbox" name="language" value="non-english" />
+                <input type="checkbox" name="language" value="non-english" onChange={handleChange}/>
                 <label htmlFor="language">Non English</label>
               </div>
             </div>

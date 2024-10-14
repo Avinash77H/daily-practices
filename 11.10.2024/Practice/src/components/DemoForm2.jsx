@@ -23,28 +23,51 @@ function DemoForm2() {
   }
 
   const validate = (values)=>{
-    const error = {}
+    const errors = {}
     if(!values.userId){
-      errors.userId = 'Required and must be of length 5 to 12.'
+      errors.userId = '*Required'
     }
+    else if(!/^[A-Z0-9]{5,12}$/i.test(values.userId) ){
+      errors.userId = "Required and must be of length 5 to 12."
+    }
+
     if(!values.password){
-      errors.password = 'Required and must be of length 7 to 12.'
+      errors.password = '*Required'
     }
+    else if(!/^[A-Z0-9]{7,12}$/i.test(values.password)){
+      errors.password = 'Required and must be of length 7 to 12'
+    }
+
     if(!values.name){
-      errors.name = "Required and alphabates only."
+      errors.name = "*Required."
     }
+    else if(!/^[A-Z]{0,}$/i.test(values.name)){
+       errors.name = "Required alphabates only."
+    }
+
     if(!values.addresh){
       errors.addresh = "Optional"
     }
+   
+
     if(!values.country){
       errors.country = "Required. must select a country"
     }
+
     if(!values.zipcode){
-      errors.zipcode = "Required. must be numerical."
+      errors.zipcode = "Required.."
     }
+    else if(!/^[0-9]{0,}$/i.test(values.zipcode)){
+      errors.zipcode = "must be numerical."
+    }
+
     if(!values.email){
-      errors.email = "Required. Must be valid email."
+      errors.email = "Required."
     }
+    else if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)){
+      errors.email = "Must be valid email."
+    }
+
     if(!values.sex){
       errors.sex = "Required."
     }
@@ -54,7 +77,7 @@ function DemoForm2() {
     if(!values.about){
       errors.about = "Optional."
     }
-    return error
+    return errors
   }
 
   const {handleChange,handleSubmit,values,errors,handleBlur,touched} = useFormik({
@@ -72,7 +95,7 @@ function DemoForm2() {
             <label htmlFor="userId">User id:</label>
             <input onChange={handleChange} className='border border-black' type="text" name='userId' />
           </div>
-            {errors.userId  ?<p className='text-red-500'>{errors.userId}</p>:null}
+            {errors.userId  ?<p className='text-red-500 '>{errors.userId}</p>:null}
 
           <div className=' flex justify-between'>
             <label htmlFor="password">Password:</label>
@@ -106,7 +129,7 @@ function DemoForm2() {
 
           <div onChange={handleChange} className=' flex justify-between'>
             <label htmlFor="zipcode">ZIP Code:</label>
-            <input className='border border-black' type="number" name='zipcode' />
+            <input className='border border-black' type="text" name='zipcode' />
           </div>
           {errors.zipcode  ?<p className='text-red-500'>{errors.zipcode}</p>:null}
 
@@ -156,6 +179,7 @@ function DemoForm2() {
 
         </form>
       </div>
+    
     </div>
   )
 }
