@@ -10,28 +10,28 @@ import {toast} from 'react-toastify';
    const api = 'https://dummyjson.com/products'
 
 
-// const filterData = [
-//   {
-//     id: 1,
-//     title: "nuevo",
-//   },
-//   {
-//     id: 2,
-//     title: "Electronics",
-//   },
-//   {
-//     id: 3,
-//     title: "Furniture",
-//   },
-//   {
-//     id: 4,
-//     title: "Shoes",
-//   },
-//   {
-//     id: 5,
-//     title: "Testing Category",
-//   },
-// ];
+const filterData = [
+  {
+    id: 1,
+    title: "nuevo",
+  },
+  {
+    id: 2,
+    title: "Electronics",
+  },
+  {
+    id: 3,
+    title: "Furniture",
+  },
+  {
+    id: 4,
+    title: "Shoes",
+  },
+  {
+    id: 5,
+    title: "Testing Category",
+  },
+];
 
 function App() {
 
