@@ -12,7 +12,7 @@ function AddTodo({ method }) {
     setDueDate(event.target.value);
     }
 
-  function  addHandler(){
+  function addHandler(){
     method(todo,dueDate)
     setTodo("")
     setDueDate("")
