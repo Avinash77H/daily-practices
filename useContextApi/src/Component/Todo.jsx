@@ -1,5 +1,7 @@
-import React from 'react'
-function Todo({todo,dueDate,handleDeleteTodo}) {
+import React, { useContext } from 'react'
+import { TodoContext } from '../store/AppContext'
+function Todo({todo,dueDate}) {
+  const{handleDeleteTodo} = useContext(TodoContext)
   
   return (
     <div className='flex justify-between items-center mx-20 mt-8 bg-yellow-50 px-4 py-1'>
