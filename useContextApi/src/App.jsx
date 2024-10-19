@@ -17,15 +17,15 @@ function App() {
     const newData = todo.filter((item)=>item.todo !== todoName)
     newTodo(newData)
   }
-
-  return (
-    <TodoContext.Provider>
+  
+  return ( 
+    <TodoContext.Provider value={{todo,newTodoSetHandler,handleDeleteTodo}}>
 
     <div>
       <Header/>
-      <AddTodo method={newTodoSetHandler}/>
-      <Welcome todo={todo}/>
-      <TodoItems todo={todo} handleDeleteTodo={handleDeleteTodo}/>
+      <AddTodo />
+      <Welcome />
+      <TodoItems  />
     </div>
     </TodoContext.Provider>
   )

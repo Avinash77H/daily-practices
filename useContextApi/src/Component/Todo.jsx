@@ -1,5 +1,4 @@
 import React from 'react'
-
 function Todo({todo,dueDate,handleDeleteTodo}) {
   
   return (

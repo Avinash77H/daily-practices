@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Todo from './Todo'
+import { TodoContext } from '../store/AppContext'
 
-function TodoItems({todo,handleDeleteTodo}) {
+function TodoItems() {
+  const {todo,handleDeleteTodo} = useContext(TodoContext)
   return (
     <div>
       {todo.map((item,index)=><Todo key={index} todo={item.todo} dueDate={item.dueDate} handleDeleteTodo={handleDeleteTodo}/>)}

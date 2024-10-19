@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { TodoContext } from "../store/AppContext";
 
-function AddTodo({ method }) {
+function AddTodo() {
   const [todo, setTodo] = useState();
   const [dueDate, setDueDate] = useState();
+  const {newTodoSetHandler} = useContext(TodoContext)
 
   function todoChangeHandler(event) {
     setTodo(event.target.value);
@@ -13,7 +15,7 @@ function AddTodo({ method }) {
     }
 
   function addHandler(){
-    method(todo,dueDate)
+    newTodoSetHandler(todo,dueDate)
     setTodo("")
     setDueDate("")
 
