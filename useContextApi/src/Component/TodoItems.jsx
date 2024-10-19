@@ -3,7 +3,7 @@ import Todo from './Todo'
 import { TodoContext } from '../store/AppContext'
 
 function TodoItems() {
-  const {todo,handleDeleteTodo} = useContext(TodoContext)
+  const {todo} = useContext(TodoContext)
   return (
     <div>
       {todo.map((item,index)=><Todo key={index} todo={item.todo} dueDate={item.dueDate}/>)}
