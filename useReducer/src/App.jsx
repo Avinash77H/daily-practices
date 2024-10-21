@@ -4,20 +4,22 @@ import AddTodo from "./Component/AddTodo";
 import Welcome from "./Component/Welcome";
 import TodoItems from "./Component/TodoItems";
 import TodoItemsContextProvider from "./store/AppContext";
+import Counter from "./Component/Counter";
 
 
 function App() {
 
 
   return (
-    <TodoItemsContextProvider>
-      <div>
-        <Header />
-        <AddTodo />
-        <Welcome />
-        <TodoItems />
-      </div>
-      </TodoItemsContextProvider>
+    <Counter/>
+    // <TodoItemsContextProvider>
+    //   <div>
+    //     <Header />
+    //     <AddTodo />
+    //     <Welcome />
+    //     <TodoItems />
+    //   </div>
+    //   </TodoItemsContextProvider>
   );
 }
 
