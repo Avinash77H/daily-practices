@@ -1,33 +1,45 @@
 import React, {useReducer } from 'react'
+import {Formik,Form,Field,ErrorMessage} from "formik"
+import * as Yup from "yup"
 
-const reducer = (prevState,action)=>{
-  console.log(prevState)
-  switch(action.type){
-    case 'INCREMENT':
-      return {...prevState,count:prevState.count + 1}
-    case 'DECREMENT':
-      return {...prevState,count:prevState.count - 1}
-    case 'TOGGLE':
-      return{...prevState,toggle:!prevState.toggle}
-  }
-}
 
 function App() {
+  const initialvalues = {
+    firstName: "",
+    lastName: ""
+  }
+  
+  const submitHandler = (values,{resetForm})=>{
+    console.log(values)
+    resetForm()
+  }
+
+  const validationSchema = Yup.object({
+    firstName:Yup.string().min(3,'minimum 3 character require').required('require'),
+    lastName:Yup.string().min(3,'minimum 3 character require').required('required')
+  })
  
-  const[state,dispatch] = useReducer(reducer,{count:0,toggle:false})
   return (
-    <div className='h-screen flex justify-center items-center'>
-      <div className='flex flex-col gap-2 items-center'>
-        <div className='h-6 mb-4'>
-        <p className={`${state.toggle?'hidden':'block'} text-3xl`} >{state.count}</p>
-        </div>
-        <div className='flex gap-2'>
-        <button className='btn' onClick={()=>dispatch({type:'INCREMENT'})}>Increment</button>
-        <button className='btn bg-red-500' onClick={()=>dispatch({type:'DECREMENT'})}>Decrement</button>
-        <button className='btn bg-purple-500' onClick={()=>dispatch({type:'TOGGLE'})}>Toggle</button>
-        </div>
-      </div>
+    
+  <div className='h-screen flex justify-center items-center'>
+      <div >
+      <Formik initialValues={initialvalues} onSubmit={submitHandler} validationSchema={validationSchema}>
+      <Form  className='flex flex-col gap-8 items-center'>
+       <div>
+       <label htmlFor="firstName">First Name</label>
+       <Field type="text" name="firstName" className="border border-black"></Field>
+       <ErrorMessage name="firstName" component="div"/>
+       </div>
+       <div>
+       <label htmlFor="lastName">Last Name</label>
+       <Field type="text" name="lastName" className="border border-black"></Field>
+       <ErrorMessage name="lastName" component="div"/>
+       </div>
+       <button type='submit' className='bg-green-500 text-white px-2 py-1 rounded-md'>submit</button>
+      </Form>
+      </Formik>
     </div>
+  </div>
   )
 }
 
