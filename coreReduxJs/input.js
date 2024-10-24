@@ -26,7 +26,8 @@ function chocoReducer(state = initialValue, action) {
   switch (action.type) {
     case "CHOCOLATE":
       return { ...state, chocolate: state.chocolate - 1 };
-   
+    case "ICE_CREAM":
+      return { ...state, ice_cream: state.ice_cream - 1 };
     default:
       return state;
   }
